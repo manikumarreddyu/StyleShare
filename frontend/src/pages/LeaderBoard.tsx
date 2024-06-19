@@ -6,7 +6,10 @@ import { userState } from '../store/atoms/auth';
 import { useTranslation } from 'react-i18next';
 import useLeaderboard from '../hooks/useLeadearboard';
 
-const LeaderBoard = () => {
+interface LeaderProps {
+  theme: 'light' | 'dark';
+}
+const LeaderBoard : React.FC<LeaderProps> = ({ theme }) => {
     const {loading, leaderboard} = useLeaderboard();
   const currentUser = useRecoilValue(userState);
   const {t} = useTranslation();
@@ -14,7 +17,7 @@ const LeaderBoard = () => {
 
   return (
     <div className="p-3 mb-10">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-50">{t("navbar.links.leaderboard")} 🥳</h2>
+      <h2 className={`text-3xl font-bold text-center mb-8`}>{t("navbar.links.leaderboard")} 🥳</h2>
       <div className="shadow-md bg-blue-950 backdrop-blur-sm rounded-lg p-4 border-2 border-sky-500 lg:mx-52 md:mx-20 overflow-x-auto">
         {loading ? (
           <div className="flex justify-center">

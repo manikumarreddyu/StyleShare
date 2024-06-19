@@ -12,7 +12,11 @@ import { AiTwotoneInfoCircle } from "react-icons/ai";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-const Profile = () => {
+interface ProfileProps {
+  theme: 'light' | 'dark';
+}
+
+const Profile: React.FC<ProfileProps> = ({ theme})=> {
   const [posts, setPosts] = useState<IPost[]>([]);
   const [user, setUser] = useState<IUser | null>(null);
   const [loading, setLoading] = useState(true);
@@ -140,7 +144,10 @@ const Profile = () => {
           )
         }
         <div className="mt-8 w-full">
-          <h4 className="font-semibold">{t("leaderboard.posts")} ( {user?.posts.length} )</h4>
+        {/* className={`${theme === 'light' ? 'navbar-light' : 'navbar-dark'} fixed w-full z-20 top-0 start-0`} */}
+          {/* <h4 className="font-semibold"> */}
+          <h4 className={`${theme === 'light' ? 'h2-light' : 'h2-dark'} font-semibold`}>
+            {t("leaderboard.posts")} ( {user?.posts.length} )</h4>
           <div className="mt-6 mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
 
             {user?.posts.map(post => <PostCard key={post.id} post={post} onDelete={handleDelete} currentUser={currentUser} />)}

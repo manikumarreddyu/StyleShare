@@ -16,7 +16,7 @@ function Home() {
   const { t } = useTranslation();
   
   return (      
-  <div className="min-h-screen bg-[#000435] text-white" style={{ backgroundImage: `url(${bgHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+  <div className="-mt-7  min-h-screen bg-[#000435] text-white" style={{ backgroundImage: `url(${bgHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="w-full bg-[#000435] py-16 px-4" style={{ backgroundImage: `url(${bgHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="max-w-[1240px] mx-auto grid md:grid-cols-2">
             <div className="flex flex-col justify-center">

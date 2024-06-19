@@ -42,7 +42,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#000435] mb-20 text-white" style={{ backgroundImage: `url(${bgHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="bg-[#000435] mb-0 text-white" style={{ backgroundImage: `url(${bgHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
         <h2 className="text-3xl md:text-4xl mb-14 font-extrabold text-center text-white">🤔 Frequently Asked Questions 🤔</h2>
         <dl className="space-y-5">

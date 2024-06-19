@@ -6,7 +6,10 @@ import { useRecoilValue } from "recoil";
 import { useTranslation } from "react-i18next";
 import usePosts from "../hooks/usePosts";
 
-const Posts = () => {
+interface PostsProps {
+  theme: 'light' | 'dark';
+}
+const Posts :React.FC<PostsProps> = ({ theme })=> {
   const {
     posts,
     loading,
@@ -91,13 +94,13 @@ const Posts = () => {
 
   return (
     <div className="max-w-screen-xl flex flex-col items-center justify-center mx-auto p-4">
-      <h1 className="text-2xl font-semibold mb-4 text-white">
+      <h1 className={`${theme === 'light' ? 'tl' : 'td'}  text-2xl font-semibold mb-4`}>
         {t("allPosts.Posts")}
       </h1>
       <div className="w-full flex justify-between mb-4 relative">
         <button
           onClick={toggleFilterDialog}
-          className="flex items-center text-white hover:text-gray-400"
+          className={`${theme === 'light' ? 'tl' : 'td'}  flex items-center hover:text-blue-400`}
         >
           {t("allPosts.filter")}
           <svg
