@@ -30,8 +30,9 @@ import { Tooltip } from 'react-tooltip'
 import EditPost from "./pages/EditPost";
 import useTheme from './hooks/useTheme';
 import CodeEditor from "./pages/CodeEditor";
-// import axios from "axios";
-// axios.defaults.baseURL = "http://localhost:3001/";
+import axios from "axios";
+import TrendingPosts from "./pages/TrendingPosts";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 
 function App() {
@@ -137,6 +138,12 @@ function App() {
                   path="/app/policy"
                   element={
                     <Policy />
+                  }
+                />
+                  <Route
+                  path="/app/trending-posts"
+                  element={
+                    <TrendingPosts />
                   }
                 />
                 <Route path="*" element={<PageNotFound/>} />
